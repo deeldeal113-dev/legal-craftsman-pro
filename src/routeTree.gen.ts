@@ -19,6 +19,8 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as BlogTagTagRouteImport } from './routes/blog.tag.$tag'
+import { Route as BlogCategoryCategoryRouteImport } from './routes/blog.category.$category'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -70,6 +72,16 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const BlogTagTagRoute = BlogTagTagRouteImport.update({
+  id: '/tag/$tag',
+  path: '/tag/$tag',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogCategoryCategoryRoute = BlogCategoryCategoryRouteImport.update({
+  id: '/category/$category',
+  path: '/category/$category',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -82,6 +94,8 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/category/$category': typeof BlogCategoryCategoryRoute
+  '/blog/tag/$tag': typeof BlogTagTagRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -94,6 +108,8 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/category/$category': typeof BlogCategoryCategoryRoute
+  '/blog/tag/$tag': typeof BlogTagTagRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -107,6 +123,8 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/category/$category': typeof BlogCategoryCategoryRoute
+  '/blog/tag/$tag': typeof BlogTagTagRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -121,6 +139,8 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/blog/$slug'
+    | '/blog/category/$category'
+    | '/blog/tag/$tag'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -133,6 +153,8 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/blog/$slug'
+    | '/blog/category/$category'
+    | '/blog/tag/$tag'
   id:
     | '__root__'
     | '/'
@@ -145,6 +167,8 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/blog/$slug'
+    | '/blog/category/$category'
+    | '/blog/tag/$tag'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -231,15 +255,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/tag/$tag': {
+      id: '/blog/tag/$tag'
+      path: '/tag/$tag'
+      fullPath: '/blog/tag/$tag'
+      preLoaderRoute: typeof BlogTagTagRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/category/$category': {
+      id: '/blog/category/$category'
+      path: '/category/$category'
+      fullPath: '/blog/category/$category'
+      preLoaderRoute: typeof BlogCategoryCategoryRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
 
 interface BlogRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
+  BlogCategoryCategoryRoute: typeof BlogCategoryCategoryRoute
+  BlogTagTagRoute: typeof BlogTagTagRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
+  BlogCategoryCategoryRoute: BlogCategoryCategoryRoute,
+  BlogTagTagRoute: BlogTagTagRoute,
 }
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
