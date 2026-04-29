@@ -23,7 +23,7 @@ export function SectionHeader({
   lead,
   align = "center",
 }: {
-  eyebrow?: string;
+  eyebrow?: ReactNode;
   title: string;
   lead?: string;
   align?: "center" | "start";
