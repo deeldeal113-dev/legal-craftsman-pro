@@ -17,7 +17,7 @@ function NotFoundComponent() {
         <p className="mt-2 text-sm text-muted-foreground">
           الصفحة غير موجودة. The page you're looking for doesn't exist.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 mt-16">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-gold-gradient px-5 py-2.5 text-sm font-semibold text-deep shadow-gold"
