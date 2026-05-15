@@ -1,7 +1,8 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, Sun, Moon } from "lucide-react";
 import { useLocale } from "@/lib/locale-context";
+import { useTheme } from "@/lib/theme-context";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/hero-logo.jpeg";
 
@@ -17,6 +18,7 @@ const links = [
 
 export function Navbar() {
   const { t, locale, setLocale } = useLocale();
+  const { theme, toggle: toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const loc = useLocation();
@@ -69,6 +71,13 @@ export function Navbar() {
 
           {/* Right cluster */}
           <div className="flex items-center gap-1.5">
+            <button
+              onClick={toggleTheme}
+              className="inline-flex items-center justify-center h-8 w-8 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </button>
             <button
               onClick={() => setLocale(locale === "ar" ? "en" : "ar")}
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-white/80 hover:text-white hover:bg-white/10 transition-colors"

@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
 import { LocaleProvider } from "@/lib/locale-context";
+import { ThemeProvider } from "@/lib/theme-context";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsappButton } from "@/components/WhatsappButton";
@@ -99,16 +100,18 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   return (
-    <LocaleProvider>
-      <JsonLd data={legalServiceJsonLd()} />
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <Footer />
-        <WhatsappButton />
-      </div>
-    </LocaleProvider>
+    <ThemeProvider>
+      <LocaleProvider>
+        <JsonLd data={legalServiceJsonLd()} />
+        <div className="min-h-screen flex flex-col bg-background text-foreground">
+          <Navbar />
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          <Footer />
+          <WhatsappButton />
+        </div>
+      </LocaleProvider>
+    </ThemeProvider>
   );
 }
