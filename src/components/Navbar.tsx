@@ -4,7 +4,7 @@ import { Menu, X, Globe, Sun, Moon } from "lucide-react";
 import { useLocale } from "@/lib/locale-context";
 import { useTheme } from "@/lib/theme-context";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/hero-logo.jpeg";
+import logo from "@/assets/logo-icon.jpeg";
 
 const links = [
   { to: "/", key: "home" as const },
@@ -32,22 +32,22 @@ export function Navbar() {
   }, []);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled
-          ? "bg-deep/95 backdrop-blur-xl shadow-elegant border-b border-gold/10"
-          : "bg-deep"
-      )}
-    >
-      <div className="container mx-auto px-4">
-        <div className="relative flex items-center justify-between gap-4 py-3">
+    <header className="sticky top-0 z-50 w-full">
+      <div className="container mx-auto px-4 pt-3 pb-2">
+        <div
+          className={cn(
+            "relative flex items-center justify-between gap-4 rounded-full border border-white/10 px-3 py-2 md:px-4 md:py-2.5 transition-all duration-300",
+            scrolled
+              ? "bg-deep/95 backdrop-blur-xl shadow-elegant"
+              : "bg-deep/85 backdrop-blur-md"
+          )}
+        >
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
             <img
               src={logo}
               alt="Mohamed Khaled Law"
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-9 md:h-10 w-9 md:w-10 rounded-full object-cover ring-1 ring-gold/40"
             />
           </Link>
 
