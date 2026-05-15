@@ -5,7 +5,7 @@ import { Section, SectionHeader } from "@/components/Section";
 import { SITE } from "@/lib/site-config";
 import lawyerPortrait from "@/assets/lawyer-portrait.jpg";
 import banner from "@/assets/hero-bg.jpeg";
-import heroLogo from "@/assets/hero-logo.jpeg";
+import heroLogo from "@/assets/hero-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
