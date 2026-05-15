@@ -4,7 +4,8 @@ import { useLocale } from "@/lib/locale-context";
 import { Section, SectionHeader } from "@/components/Section";
 import { SITE } from "@/lib/site-config";
 import lawyerPortrait from "@/assets/lawyer-portrait.jpg";
-import banner from "@/assets/lawyer-banner.jpg";
+import banner from "@/assets/hero-bg.jpeg";
+import heroLogo from "@/assets/hero-logo.jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,13 +26,13 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-hero-gradient text-primary-foreground">
+      <section className="relative overflow-hidden bg-deep text-primary-foreground">
         <div
-          className="absolute inset-0 opacity-25"
+          className="absolute inset-0 opacity-60"
           style={{ backgroundImage: `url(${banner})`, backgroundSize: "cover", backgroundPosition: "center" }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-deep/70" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep/80 via-deep/60 to-deep" aria-hidden />
         <div className="absolute inset-0 pattern-dots opacity-30" aria-hidden />
 
         <div className="relative container mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
@@ -42,15 +43,12 @@ function HomePage() {
                 {t.hero.eyebrow}
               </span>
             </div>
-            <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight">
-              <span className="block text-gold-soft">{t.hero.title}</span>
-              <span className="block text-2xl md:text-3xl mt-3 text-primary-foreground/90 font-normal">
-                {t.hero.subtitle}
-              </span>
-            </h1>
-            <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl leading-relaxed">
-              {t.hero.tagline}
-            </p>
+            <img
+              src={heroLogo}
+              alt={locale === "ar" ? "مكتب الدكتور محمد خالد مكي للمحاماة" : "Dr. Mohamed Khaled Mekky Law Firm"}
+              className="w-full max-w-lg h-auto object-contain drop-shadow-[0_8px_24px_rgba(201,168,76,0.35)]"
+              loading="eager"
+            />
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
                 to="/contact"
