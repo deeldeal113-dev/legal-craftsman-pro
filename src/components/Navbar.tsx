@@ -1,9 +1,9 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Menu, X, Globe, Scale } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { useLocale } from "@/lib/locale-context";
-import { SITE } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/hero-logo.jpeg";
 
 const links = [
   { to: "/", key: "home" as const },
@@ -30,24 +30,23 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full -mb-22 ">
-      <div className="container mx-auto px-4 pt-4 pb-2">
-        <div
-          className={cn(
-            "relative flex items-center justify-between gap-4 rounded-full border border-white/10 px-3 py-2 md:px-4 md:py-2.5 transition-all duration-300",
-            scrolled
-              ? "bg-deep/85 backdrop-blur-xl shadow-elegant"
-              : "bg-deep/60 backdrop-blur-md"
-          )}
-        >
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        scrolled
+          ? "bg-deep/95 backdrop-blur-xl shadow-elegant border-b border-gold/10"
+          : "bg-deep"
+      )}
+    >
+      <div className="container mx-auto px-4">
+        <div className="relative flex items-center justify-between gap-4 py-3">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0 pl-2">
-            <span className="font-display text-xl md:text-2xl font-bold text-white whitespace-nowrap">
-              {locale === "ar" ? SITE.shortAr : SITE.shortEn}
-            </span>
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-gradient shadow-gold">
-              <Scale className="h-4 w-4 text-deep" strokeWidth={2.4} />
-            </span>
+          <Link to="/" className="flex items-center gap-2 shrink-0">
+            <img
+              src={logo}
+              alt="Mohamed Khaled Law"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Centered nav */}
@@ -90,7 +89,7 @@ export function Navbar() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="lg:hidden mt-2 rounded-2xl border border-white/10 bg-deep/95 backdrop-blur-xl shadow-elegant">
+          <div className="lg:hidden mb-2 rounded-2xl border border-white/10 bg-deep/95 backdrop-blur-xl shadow-elegant">
             <nav className="flex flex-col p-3">
               {links.map((l) => (
                 <Link
