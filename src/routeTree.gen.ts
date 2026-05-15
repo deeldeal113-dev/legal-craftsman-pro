@@ -14,6 +14,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as FieldsRouteImport } from './routes/fields'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
@@ -45,6 +46,11 @@ const FieldsRoute = FieldsRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/fields': typeof FieldsRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/fields': typeof FieldsRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -117,6 +125,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/faq': typeof FaqRoute
   '/fields': typeof FieldsRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -133,6 +142,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/contact'
+    | '/dashboard'
     | '/faq'
     | '/fields'
     | '/robots.txt'
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/contact'
+    | '/dashboard'
     | '/faq'
     | '/fields'
     | '/robots.txt'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/contact'
+    | '/dashboard'
     | '/faq'
     | '/fields'
     | '/robots.txt'
@@ -176,6 +188,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
+  DashboardRoute: typeof DashboardRoute
   FaqRoute: typeof FaqRoute
   FieldsRoute: typeof FieldsRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
@@ -218,6 +231,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -291,6 +311,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
+  DashboardRoute: DashboardRoute,
   FaqRoute: FaqRoute,
   FieldsRoute: FieldsRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
