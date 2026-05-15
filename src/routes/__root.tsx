@@ -100,16 +100,18 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   return (
-    <LocaleProvider>
-      <JsonLd data={legalServiceJsonLd()} />
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <Footer />
-        <WhatsappButton />
-      </div>
-    </LocaleProvider>
+    <ThemeProvider>
+      <LocaleProvider>
+        <JsonLd data={legalServiceJsonLd()} />
+        <div className="min-h-screen flex flex-col bg-background text-foreground">
+          <Navbar />
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          <Footer />
+          <WhatsappButton />
+        </div>
+      </LocaleProvider>
+    </ThemeProvider>
   );
 }
