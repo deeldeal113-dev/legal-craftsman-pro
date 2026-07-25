@@ -20,15 +20,15 @@ import { LanguageSwitcher } from "./language-switcher";
 
 const NAV = [
   { to: "/$lang/dashboard", key: "dashboard", icon: LayoutDashboard, match: "/dashboard" },
-  { to: "/$lang/cases", key: "cases", icon: Scale, match: "/cases" },
-  { to: "/$lang/clients", key: "clients", icon: Users, match: "/clients" },
-  { to: "/$lang/documents", key: "documents", icon: FileText, match: "/documents" },
-  { to: "/$lang/tasks", key: "tasks", icon: ListChecks, match: "/tasks" },
-  { to: "/$lang/calendar", key: "calendar", icon: CalendarDays, match: "/calendar" },
-  { to: "/$lang/invoices", key: "invoices", icon: Receipt, match: "/invoices" },
-  { to: "/$lang/messages", key: "messages", icon: MessageSquare, match: "/messages" },
-  { to: "/$lang/team", key: "team", icon: UsersRound, match: "/team" },
-  { to: "/$lang/settings", key: "settings", icon: Settings, match: "/settings" },
+  { to: "/$lang/dashboard/cases", key: "cases", icon: Scale, match: "/dashboard/cases" },
+  { to: "/$lang/dashboard/clients", key: "clients", icon: Users, match: "/dashboard/clients" },
+  { to: "/$lang/dashboard/documents", key: "documents", icon: FileText, match: "/dashboard/documents" },
+  { to: "/$lang/dashboard/tasks", key: "tasks", icon: ListChecks, match: "/dashboard/tasks" },
+  { to: "/$lang/dashboard/calendar", key: "calendar", icon: CalendarDays, match: "/dashboard/calendar" },
+  { to: "/$lang/dashboard/transaction", key: "invoices", icon: Receipt, match: "/dashboard/transaction" },
+  { to: "/$lang/dashboard/messages", key: "messages", icon: MessageSquare, match: "/dashboard/messages" },
+  { to: "/$lang/dashboard/team", key: "team", icon: UsersRound, match: "/dashboard/team" },
+  { to: "/$lang/dashboard/setting", key: "settings", icon: Settings, match: "/dashboard/setting" },
 ] as const;
 
 export function AppShell() {
