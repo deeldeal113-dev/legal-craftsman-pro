@@ -13,8 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangRouteImport } from './routes/$lang'
 import { Route as LangIndexRouteImport } from './routes/$lang.index'
 import { Route as LangAppRouteImport } from './routes/$lang._app'
-import { Route as LangAppCasesRouteImport } from './routes/$lang._app.cases'
-import { Route as LangAppDashboardRouteImport } from './routes/$lang._app.dashboard'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -35,52 +33,29 @@ const LangAppRoute = LangAppRouteImport.update({
   id: '/_app',
   getParentRoute: () => LangRoute,
 } as any)
-const LangAppCasesRoute = LangAppCasesRouteImport.update({
-  id: '/cases',
-  path: '/cases',
-  getParentRoute: () => LangAppRoute,
-} as any)
-const LangAppDashboardRoute = LangAppDashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
-  getParentRoute: () => LangAppRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
   '/$lang/': typeof LangIndexRoute
-  '/$lang/cases': typeof LangAppCasesRoute
-  '/$lang/dashboard': typeof LangAppDashboardRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$lang': typeof LangIndexRoute
-  '/$lang/cases': typeof LangAppCasesRoute
-  '/$lang/dashboard': typeof LangAppDashboardRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
-  '/$lang/_app': typeof LangAppRouteWithChildren
+  '/$lang/_app': typeof LangAppRoute
   '/$lang/': typeof LangIndexRoute
-  '/$lang/_app/cases': typeof LangAppCasesRoute
-  '/$lang/_app/dashboard': typeof LangAppDashboardRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$lang' | '/$lang/' | '/$lang/cases' | '/$lang/dashboard'
+  fullPaths: '/' | '/$lang' | '/$lang/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$lang' | '/$lang/cases' | '/$lang/dashboard'
-  id:
-    | '__root__'
-    | '/'
-    | '/$lang'
-    | '/$lang/_app'
-    | '/$lang/'
-    | '/$lang/_app/cases'
-    | '/$lang/_app/dashboard'
+  to: '/' | '/$lang'
+  id: '__root__' | '/' | '/$lang' | '/$lang/_app' | '/$lang/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -118,43 +93,16 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangAppRouteImport
       parentRoute: typeof LangRoute
     }
-    '/$lang/_app/cases': {
-      id: '/$lang/_app/cases'
-      path: '/cases'
-      fullPath: '/$lang/cases'
-      preLoaderRoute: typeof LangAppCasesRouteImport
-      parentRoute: typeof LangAppRoute
-    }
-    '/$lang/_app/dashboard': {
-      id: '/$lang/_app/dashboard'
-      path: '/dashboard'
-      fullPath: '/$lang/dashboard'
-      preLoaderRoute: typeof LangAppDashboardRouteImport
-      parentRoute: typeof LangAppRoute
-    }
   }
 }
 
-interface LangAppRouteChildren {
-  LangAppCasesRoute: typeof LangAppCasesRoute
-  LangAppDashboardRoute: typeof LangAppDashboardRoute
-}
-
-const LangAppRouteChildren: LangAppRouteChildren = {
-  LangAppCasesRoute: LangAppCasesRoute,
-  LangAppDashboardRoute: LangAppDashboardRoute,
-}
-
-const LangAppRouteWithChildren =
-  LangAppRoute._addFileChildren(LangAppRouteChildren)
-
 interface LangRouteChildren {
-  LangAppRoute: typeof LangAppRouteWithChildren
+  LangAppRoute: typeof LangAppRoute
   LangIndexRoute: typeof LangIndexRoute
 }
 
 const LangRouteChildren: LangRouteChildren = {
-  LangAppRoute: LangAppRouteWithChildren,
+  LangAppRoute: LangAppRoute,
   LangIndexRoute: LangIndexRoute,
 }
 
