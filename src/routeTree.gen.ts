@@ -13,8 +13,38 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangRouteImport } from './routes/$lang'
 import { Route as LangIndexRouteImport } from './routes/$lang.index'
 import { Route as LangAppRouteImport } from './routes/$lang._app'
-import { Route as LangAppCasesRouteImport } from './routes/$lang._app.cases'
+import { Route as LangPublicRouteImport } from './routes/$lang._public'
 import { Route as LangAppDashboardRouteImport } from './routes/$lang._app.dashboard'
+import { Route as LangPublicAboutRouteImport } from './routes/$lang._public.about'
+import { Route as LangPublicContactRouteImport } from './routes/$lang._public.contact'
+import { Route as LangPublicHelpCenterRouteImport } from './routes/$lang._public.help-center'
+import { Route as LangPublicPrivacyRouteImport } from './routes/$lang._public.privacy'
+import { Route as LangPublicTermsAndConditionsRouteImport } from './routes/$lang._public.terms-and-conditions'
+import { Route as LangAppDashboardIndexRouteImport } from './routes/$lang._app.dashboard.index'
+import { Route as LangAppDashboardAnalyticsRouteImport } from './routes/$lang._app.dashboard.analytics'
+import { Route as LangAppDashboardCalendarRouteImport } from './routes/$lang._app.dashboard.calendar'
+import { Route as LangAppDashboardClientsRouteImport } from './routes/$lang._app.dashboard.clients'
+import { Route as LangAppDashboardDocumentsRouteImport } from './routes/$lang._app.dashboard.documents'
+import { Route as LangAppDashboardFieldsRouteImport } from './routes/$lang._app.dashboard.fields'
+import { Route as LangAppDashboardMessagesRouteImport } from './routes/$lang._app.dashboard.messages'
+import { Route as LangAppDashboardPostsRouteImport } from './routes/$lang._app.dashboard.posts'
+import { Route as LangAppDashboardServicesRouteImport } from './routes/$lang._app.dashboard.services'
+import { Route as LangAppDashboardSettingRouteImport } from './routes/$lang._app.dashboard.setting'
+import { Route as LangAppDashboardTasksRouteImport } from './routes/$lang._app.dashboard.tasks'
+import { Route as LangAppDashboardTeamRouteImport } from './routes/$lang._app.dashboard.team'
+import { Route as LangAppDashboardTransactionRouteImport } from './routes/$lang._app.dashboard.transaction'
+import { Route as LangPublicClientsIndexRouteImport } from './routes/$lang._public.clients.index'
+import { Route as LangPublicClientsIdRouteImport } from './routes/$lang._public.clients.$id'
+import { Route as LangPublicFieldsIndexRouteImport } from './routes/$lang._public.fields.index'
+import { Route as LangPublicFieldsSlugRouteImport } from './routes/$lang._public.fields.$slug'
+import { Route as LangPublicLawyersIndexRouteImport } from './routes/$lang._public.lawyers.index'
+import { Route as LangPublicLawyersIdRouteImport } from './routes/$lang._public.lawyers.$id'
+import { Route as LangPublicPostsIndexRouteImport } from './routes/$lang._public.posts.index'
+import { Route as LangPublicPostsSlugRouteImport } from './routes/$lang._public.posts.$slug'
+import { Route as LangPublicServiceIndexRouteImport } from './routes/$lang._public.service.index'
+import { Route as LangPublicServiceSlugRouteImport } from './routes/$lang._public.service.$slug'
+import { Route as LangAppDashboardCasesIndexRouteImport } from './routes/$lang._app.dashboard.cases.index'
+import { Route as LangAppDashboardCasesIdRouteImport } from './routes/$lang._app.dashboard.cases.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -35,52 +65,392 @@ const LangAppRoute = LangAppRouteImport.update({
   id: '/_app',
   getParentRoute: () => LangRoute,
 } as any)
-const LangAppCasesRoute = LangAppCasesRouteImport.update({
-  id: '/cases',
-  path: '/cases',
-  getParentRoute: () => LangAppRoute,
+const LangPublicRoute = LangPublicRouteImport.update({
+  id: '/_public',
+  getParentRoute: () => LangRoute,
 } as any)
 const LangAppDashboardRoute = LangAppDashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
   getParentRoute: () => LangAppRoute,
 } as any)
+const LangPublicAboutRoute = LangPublicAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicContactRoute = LangPublicContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicHelpCenterRoute = LangPublicHelpCenterRouteImport.update({
+  id: '/help-center',
+  path: '/help-center',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicPrivacyRoute = LangPublicPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicTermsAndConditionsRoute =
+  LangPublicTermsAndConditionsRouteImport.update({
+    id: '/terms-and-conditions',
+    path: '/terms-and-conditions',
+    getParentRoute: () => LangPublicRoute,
+  } as any)
+const LangAppDashboardIndexRoute = LangAppDashboardIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LangAppDashboardRoute,
+} as any)
+const LangAppDashboardAnalyticsRoute =
+  LangAppDashboardAnalyticsRouteImport.update({
+    id: '/analytics',
+    path: '/analytics',
+    getParentRoute: () => LangAppDashboardRoute,
+  } as any)
+const LangAppDashboardCalendarRoute =
+  LangAppDashboardCalendarRouteImport.update({
+    id: '/calendar',
+    path: '/calendar',
+    getParentRoute: () => LangAppDashboardRoute,
+  } as any)
+const LangAppDashboardClientsRoute = LangAppDashboardClientsRouteImport.update({
+  id: '/clients',
+  path: '/clients',
+  getParentRoute: () => LangAppDashboardRoute,
+} as any)
+const LangAppDashboardDocumentsRoute =
+  LangAppDashboardDocumentsRouteImport.update({
+    id: '/documents',
+    path: '/documents',
+    getParentRoute: () => LangAppDashboardRoute,
+  } as any)
+const LangAppDashboardFieldsRoute = LangAppDashboardFieldsRouteImport.update({
+  id: '/fields',
+  path: '/fields',
+  getParentRoute: () => LangAppDashboardRoute,
+} as any)
+const LangAppDashboardMessagesRoute =
+  LangAppDashboardMessagesRouteImport.update({
+    id: '/messages',
+    path: '/messages',
+    getParentRoute: () => LangAppDashboardRoute,
+  } as any)
+const LangAppDashboardPostsRoute = LangAppDashboardPostsRouteImport.update({
+  id: '/posts',
+  path: '/posts',
+  getParentRoute: () => LangAppDashboardRoute,
+} as any)
+const LangAppDashboardServicesRoute =
+  LangAppDashboardServicesRouteImport.update({
+    id: '/services',
+    path: '/services',
+    getParentRoute: () => LangAppDashboardRoute,
+  } as any)
+const LangAppDashboardSettingRoute = LangAppDashboardSettingRouteImport.update({
+  id: '/setting',
+  path: '/setting',
+  getParentRoute: () => LangAppDashboardRoute,
+} as any)
+const LangAppDashboardTasksRoute = LangAppDashboardTasksRouteImport.update({
+  id: '/tasks',
+  path: '/tasks',
+  getParentRoute: () => LangAppDashboardRoute,
+} as any)
+const LangAppDashboardTeamRoute = LangAppDashboardTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => LangAppDashboardRoute,
+} as any)
+const LangAppDashboardTransactionRoute =
+  LangAppDashboardTransactionRouteImport.update({
+    id: '/transaction',
+    path: '/transaction',
+    getParentRoute: () => LangAppDashboardRoute,
+  } as any)
+const LangPublicClientsIndexRoute = LangPublicClientsIndexRouteImport.update({
+  id: '/clients/',
+  path: '/clients/',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicClientsIdRoute = LangPublicClientsIdRouteImport.update({
+  id: '/clients/$id',
+  path: '/clients/$id',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicFieldsIndexRoute = LangPublicFieldsIndexRouteImport.update({
+  id: '/fields/',
+  path: '/fields/',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicFieldsSlugRoute = LangPublicFieldsSlugRouteImport.update({
+  id: '/fields/$slug',
+  path: '/fields/$slug',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicLawyersIndexRoute = LangPublicLawyersIndexRouteImport.update({
+  id: '/lawyers/',
+  path: '/lawyers/',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicLawyersIdRoute = LangPublicLawyersIdRouteImport.update({
+  id: '/lawyers/$id',
+  path: '/lawyers/$id',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicPostsIndexRoute = LangPublicPostsIndexRouteImport.update({
+  id: '/posts/',
+  path: '/posts/',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicPostsSlugRoute = LangPublicPostsSlugRouteImport.update({
+  id: '/posts/$slug',
+  path: '/posts/$slug',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicServiceIndexRoute = LangPublicServiceIndexRouteImport.update({
+  id: '/service/',
+  path: '/service/',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangPublicServiceSlugRoute = LangPublicServiceSlugRouteImport.update({
+  id: '/service/$slug',
+  path: '/service/$slug',
+  getParentRoute: () => LangPublicRoute,
+} as any)
+const LangAppDashboardCasesIndexRoute =
+  LangAppDashboardCasesIndexRouteImport.update({
+    id: '/cases/',
+    path: '/cases/',
+    getParentRoute: () => LangAppDashboardRoute,
+  } as any)
+const LangAppDashboardCasesIdRoute = LangAppDashboardCasesIdRouteImport.update({
+  id: '/cases/$id',
+  path: '/cases/$id',
+  getParentRoute: () => LangAppDashboardRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
   '/$lang/': typeof LangIndexRoute
-  '/$lang/cases': typeof LangAppCasesRoute
-  '/$lang/dashboard': typeof LangAppDashboardRoute
+  '/$lang/dashboard': typeof LangAppDashboardRouteWithChildren
+  '/$lang/about': typeof LangPublicAboutRoute
+  '/$lang/contact': typeof LangPublicContactRoute
+  '/$lang/help-center': typeof LangPublicHelpCenterRoute
+  '/$lang/privacy': typeof LangPublicPrivacyRoute
+  '/$lang/terms-and-conditions': typeof LangPublicTermsAndConditionsRoute
+  '/$lang/dashboard/analytics': typeof LangAppDashboardAnalyticsRoute
+  '/$lang/dashboard/calendar': typeof LangAppDashboardCalendarRoute
+  '/$lang/dashboard/clients': typeof LangAppDashboardClientsRoute
+  '/$lang/dashboard/documents': typeof LangAppDashboardDocumentsRoute
+  '/$lang/dashboard/fields': typeof LangAppDashboardFieldsRoute
+  '/$lang/dashboard/messages': typeof LangAppDashboardMessagesRoute
+  '/$lang/dashboard/posts': typeof LangAppDashboardPostsRoute
+  '/$lang/dashboard/services': typeof LangAppDashboardServicesRoute
+  '/$lang/dashboard/setting': typeof LangAppDashboardSettingRoute
+  '/$lang/dashboard/tasks': typeof LangAppDashboardTasksRoute
+  '/$lang/dashboard/team': typeof LangAppDashboardTeamRoute
+  '/$lang/dashboard/transaction': typeof LangAppDashboardTransactionRoute
+  '/$lang/clients/$id': typeof LangPublicClientsIdRoute
+  '/$lang/fields/$slug': typeof LangPublicFieldsSlugRoute
+  '/$lang/lawyers/$id': typeof LangPublicLawyersIdRoute
+  '/$lang/posts/$slug': typeof LangPublicPostsSlugRoute
+  '/$lang/service/$slug': typeof LangPublicServiceSlugRoute
+  '/$lang/dashboard/': typeof LangAppDashboardIndexRoute
+  '/$lang/clients/': typeof LangPublicClientsIndexRoute
+  '/$lang/fields/': typeof LangPublicFieldsIndexRoute
+  '/$lang/lawyers/': typeof LangPublicLawyersIndexRoute
+  '/$lang/posts/': typeof LangPublicPostsIndexRoute
+  '/$lang/service/': typeof LangPublicServiceIndexRoute
+  '/$lang/dashboard/cases/$id': typeof LangAppDashboardCasesIdRoute
+  '/$lang/dashboard/cases/': typeof LangAppDashboardCasesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$lang': typeof LangIndexRoute
-  '/$lang/cases': typeof LangAppCasesRoute
-  '/$lang/dashboard': typeof LangAppDashboardRoute
+  '/$lang/about': typeof LangPublicAboutRoute
+  '/$lang/contact': typeof LangPublicContactRoute
+  '/$lang/help-center': typeof LangPublicHelpCenterRoute
+  '/$lang/privacy': typeof LangPublicPrivacyRoute
+  '/$lang/terms-and-conditions': typeof LangPublicTermsAndConditionsRoute
+  '/$lang/dashboard/analytics': typeof LangAppDashboardAnalyticsRoute
+  '/$lang/dashboard/calendar': typeof LangAppDashboardCalendarRoute
+  '/$lang/dashboard/clients': typeof LangAppDashboardClientsRoute
+  '/$lang/dashboard/documents': typeof LangAppDashboardDocumentsRoute
+  '/$lang/dashboard/fields': typeof LangAppDashboardFieldsRoute
+  '/$lang/dashboard/messages': typeof LangAppDashboardMessagesRoute
+  '/$lang/dashboard/posts': typeof LangAppDashboardPostsRoute
+  '/$lang/dashboard/services': typeof LangAppDashboardServicesRoute
+  '/$lang/dashboard/setting': typeof LangAppDashboardSettingRoute
+  '/$lang/dashboard/tasks': typeof LangAppDashboardTasksRoute
+  '/$lang/dashboard/team': typeof LangAppDashboardTeamRoute
+  '/$lang/dashboard/transaction': typeof LangAppDashboardTransactionRoute
+  '/$lang/clients/$id': typeof LangPublicClientsIdRoute
+  '/$lang/fields/$slug': typeof LangPublicFieldsSlugRoute
+  '/$lang/lawyers/$id': typeof LangPublicLawyersIdRoute
+  '/$lang/posts/$slug': typeof LangPublicPostsSlugRoute
+  '/$lang/service/$slug': typeof LangPublicServiceSlugRoute
+  '/$lang/dashboard': typeof LangAppDashboardIndexRoute
+  '/$lang/clients': typeof LangPublicClientsIndexRoute
+  '/$lang/fields': typeof LangPublicFieldsIndexRoute
+  '/$lang/lawyers': typeof LangPublicLawyersIndexRoute
+  '/$lang/posts': typeof LangPublicPostsIndexRoute
+  '/$lang/service': typeof LangPublicServiceIndexRoute
+  '/$lang/dashboard/cases/$id': typeof LangAppDashboardCasesIdRoute
+  '/$lang/dashboard/cases': typeof LangAppDashboardCasesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
   '/$lang/_app': typeof LangAppRouteWithChildren
+  '/$lang/_public': typeof LangPublicRouteWithChildren
   '/$lang/': typeof LangIndexRoute
-  '/$lang/_app/cases': typeof LangAppCasesRoute
-  '/$lang/_app/dashboard': typeof LangAppDashboardRoute
+  '/$lang/_app/dashboard': typeof LangAppDashboardRouteWithChildren
+  '/$lang/_public/about': typeof LangPublicAboutRoute
+  '/$lang/_public/contact': typeof LangPublicContactRoute
+  '/$lang/_public/help-center': typeof LangPublicHelpCenterRoute
+  '/$lang/_public/privacy': typeof LangPublicPrivacyRoute
+  '/$lang/_public/terms-and-conditions': typeof LangPublicTermsAndConditionsRoute
+  '/$lang/_app/dashboard/analytics': typeof LangAppDashboardAnalyticsRoute
+  '/$lang/_app/dashboard/calendar': typeof LangAppDashboardCalendarRoute
+  '/$lang/_app/dashboard/clients': typeof LangAppDashboardClientsRoute
+  '/$lang/_app/dashboard/documents': typeof LangAppDashboardDocumentsRoute
+  '/$lang/_app/dashboard/fields': typeof LangAppDashboardFieldsRoute
+  '/$lang/_app/dashboard/messages': typeof LangAppDashboardMessagesRoute
+  '/$lang/_app/dashboard/posts': typeof LangAppDashboardPostsRoute
+  '/$lang/_app/dashboard/services': typeof LangAppDashboardServicesRoute
+  '/$lang/_app/dashboard/setting': typeof LangAppDashboardSettingRoute
+  '/$lang/_app/dashboard/tasks': typeof LangAppDashboardTasksRoute
+  '/$lang/_app/dashboard/team': typeof LangAppDashboardTeamRoute
+  '/$lang/_app/dashboard/transaction': typeof LangAppDashboardTransactionRoute
+  '/$lang/_public/clients/$id': typeof LangPublicClientsIdRoute
+  '/$lang/_public/fields/$slug': typeof LangPublicFieldsSlugRoute
+  '/$lang/_public/lawyers/$id': typeof LangPublicLawyersIdRoute
+  '/$lang/_public/posts/$slug': typeof LangPublicPostsSlugRoute
+  '/$lang/_public/service/$slug': typeof LangPublicServiceSlugRoute
+  '/$lang/_app/dashboard/': typeof LangAppDashboardIndexRoute
+  '/$lang/_public/clients/': typeof LangPublicClientsIndexRoute
+  '/$lang/_public/fields/': typeof LangPublicFieldsIndexRoute
+  '/$lang/_public/lawyers/': typeof LangPublicLawyersIndexRoute
+  '/$lang/_public/posts/': typeof LangPublicPostsIndexRoute
+  '/$lang/_public/service/': typeof LangPublicServiceIndexRoute
+  '/$lang/_app/dashboard/cases/$id': typeof LangAppDashboardCasesIdRoute
+  '/$lang/_app/dashboard/cases/': typeof LangAppDashboardCasesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$lang' | '/$lang/' | '/$lang/cases' | '/$lang/dashboard'
+  fullPaths:
+    | '/'
+    | '/$lang'
+    | '/$lang/'
+    | '/$lang/dashboard'
+    | '/$lang/about'
+    | '/$lang/contact'
+    | '/$lang/help-center'
+    | '/$lang/privacy'
+    | '/$lang/terms-and-conditions'
+    | '/$lang/dashboard/analytics'
+    | '/$lang/dashboard/calendar'
+    | '/$lang/dashboard/clients'
+    | '/$lang/dashboard/documents'
+    | '/$lang/dashboard/fields'
+    | '/$lang/dashboard/messages'
+    | '/$lang/dashboard/posts'
+    | '/$lang/dashboard/services'
+    | '/$lang/dashboard/setting'
+    | '/$lang/dashboard/tasks'
+    | '/$lang/dashboard/team'
+    | '/$lang/dashboard/transaction'
+    | '/$lang/clients/$id'
+    | '/$lang/fields/$slug'
+    | '/$lang/lawyers/$id'
+    | '/$lang/posts/$slug'
+    | '/$lang/service/$slug'
+    | '/$lang/dashboard/'
+    | '/$lang/clients/'
+    | '/$lang/fields/'
+    | '/$lang/lawyers/'
+    | '/$lang/posts/'
+    | '/$lang/service/'
+    | '/$lang/dashboard/cases/$id'
+    | '/$lang/dashboard/cases/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$lang' | '/$lang/cases' | '/$lang/dashboard'
+  to:
+    | '/'
+    | '/$lang'
+    | '/$lang/about'
+    | '/$lang/contact'
+    | '/$lang/help-center'
+    | '/$lang/privacy'
+    | '/$lang/terms-and-conditions'
+    | '/$lang/dashboard/analytics'
+    | '/$lang/dashboard/calendar'
+    | '/$lang/dashboard/clients'
+    | '/$lang/dashboard/documents'
+    | '/$lang/dashboard/fields'
+    | '/$lang/dashboard/messages'
+    | '/$lang/dashboard/posts'
+    | '/$lang/dashboard/services'
+    | '/$lang/dashboard/setting'
+    | '/$lang/dashboard/tasks'
+    | '/$lang/dashboard/team'
+    | '/$lang/dashboard/transaction'
+    | '/$lang/clients/$id'
+    | '/$lang/fields/$slug'
+    | '/$lang/lawyers/$id'
+    | '/$lang/posts/$slug'
+    | '/$lang/service/$slug'
+    | '/$lang/dashboard'
+    | '/$lang/clients'
+    | '/$lang/fields'
+    | '/$lang/lawyers'
+    | '/$lang/posts'
+    | '/$lang/service'
+    | '/$lang/dashboard/cases/$id'
+    | '/$lang/dashboard/cases'
   id:
     | '__root__'
     | '/'
     | '/$lang'
     | '/$lang/_app'
+    | '/$lang/_public'
     | '/$lang/'
-    | '/$lang/_app/cases'
     | '/$lang/_app/dashboard'
+    | '/$lang/_public/about'
+    | '/$lang/_public/contact'
+    | '/$lang/_public/help-center'
+    | '/$lang/_public/privacy'
+    | '/$lang/_public/terms-and-conditions'
+    | '/$lang/_app/dashboard/analytics'
+    | '/$lang/_app/dashboard/calendar'
+    | '/$lang/_app/dashboard/clients'
+    | '/$lang/_app/dashboard/documents'
+    | '/$lang/_app/dashboard/fields'
+    | '/$lang/_app/dashboard/messages'
+    | '/$lang/_app/dashboard/posts'
+    | '/$lang/_app/dashboard/services'
+    | '/$lang/_app/dashboard/setting'
+    | '/$lang/_app/dashboard/tasks'
+    | '/$lang/_app/dashboard/team'
+    | '/$lang/_app/dashboard/transaction'
+    | '/$lang/_public/clients/$id'
+    | '/$lang/_public/fields/$slug'
+    | '/$lang/_public/lawyers/$id'
+    | '/$lang/_public/posts/$slug'
+    | '/$lang/_public/service/$slug'
+    | '/$lang/_app/dashboard/'
+    | '/$lang/_public/clients/'
+    | '/$lang/_public/fields/'
+    | '/$lang/_public/lawyers/'
+    | '/$lang/_public/posts/'
+    | '/$lang/_public/service/'
+    | '/$lang/_app/dashboard/cases/$id'
+    | '/$lang/_app/dashboard/cases/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -118,12 +488,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangAppRouteImport
       parentRoute: typeof LangRoute
     }
-    '/$lang/_app/cases': {
-      id: '/$lang/_app/cases'
-      path: '/cases'
-      fullPath: '/$lang/cases'
-      preLoaderRoute: typeof LangAppCasesRouteImport
-      parentRoute: typeof LangAppRoute
+    '/$lang/_public': {
+      id: '/$lang/_public'
+      path: ''
+      fullPath: '/$lang'
+      preLoaderRoute: typeof LangPublicRouteImport
+      parentRoute: typeof LangRoute
     }
     '/$lang/_app/dashboard': {
       id: '/$lang/_app/dashboard'
@@ -132,29 +502,318 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangAppDashboardRouteImport
       parentRoute: typeof LangAppRoute
     }
+    '/$lang/_public/about': {
+      id: '/$lang/_public/about'
+      path: '/about'
+      fullPath: '/$lang/about'
+      preLoaderRoute: typeof LangPublicAboutRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/contact': {
+      id: '/$lang/_public/contact'
+      path: '/contact'
+      fullPath: '/$lang/contact'
+      preLoaderRoute: typeof LangPublicContactRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/help-center': {
+      id: '/$lang/_public/help-center'
+      path: '/help-center'
+      fullPath: '/$lang/help-center'
+      preLoaderRoute: typeof LangPublicHelpCenterRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/privacy': {
+      id: '/$lang/_public/privacy'
+      path: '/privacy'
+      fullPath: '/$lang/privacy'
+      preLoaderRoute: typeof LangPublicPrivacyRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/terms-and-conditions': {
+      id: '/$lang/_public/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/$lang/terms-and-conditions'
+      preLoaderRoute: typeof LangPublicTermsAndConditionsRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_app/dashboard/': {
+      id: '/$lang/_app/dashboard/'
+      path: '/'
+      fullPath: '/$lang/dashboard/'
+      preLoaderRoute: typeof LangAppDashboardIndexRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/analytics': {
+      id: '/$lang/_app/dashboard/analytics'
+      path: '/analytics'
+      fullPath: '/$lang/dashboard/analytics'
+      preLoaderRoute: typeof LangAppDashboardAnalyticsRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/calendar': {
+      id: '/$lang/_app/dashboard/calendar'
+      path: '/calendar'
+      fullPath: '/$lang/dashboard/calendar'
+      preLoaderRoute: typeof LangAppDashboardCalendarRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/clients': {
+      id: '/$lang/_app/dashboard/clients'
+      path: '/clients'
+      fullPath: '/$lang/dashboard/clients'
+      preLoaderRoute: typeof LangAppDashboardClientsRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/documents': {
+      id: '/$lang/_app/dashboard/documents'
+      path: '/documents'
+      fullPath: '/$lang/dashboard/documents'
+      preLoaderRoute: typeof LangAppDashboardDocumentsRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/fields': {
+      id: '/$lang/_app/dashboard/fields'
+      path: '/fields'
+      fullPath: '/$lang/dashboard/fields'
+      preLoaderRoute: typeof LangAppDashboardFieldsRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/messages': {
+      id: '/$lang/_app/dashboard/messages'
+      path: '/messages'
+      fullPath: '/$lang/dashboard/messages'
+      preLoaderRoute: typeof LangAppDashboardMessagesRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/posts': {
+      id: '/$lang/_app/dashboard/posts'
+      path: '/posts'
+      fullPath: '/$lang/dashboard/posts'
+      preLoaderRoute: typeof LangAppDashboardPostsRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/services': {
+      id: '/$lang/_app/dashboard/services'
+      path: '/services'
+      fullPath: '/$lang/dashboard/services'
+      preLoaderRoute: typeof LangAppDashboardServicesRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/setting': {
+      id: '/$lang/_app/dashboard/setting'
+      path: '/setting'
+      fullPath: '/$lang/dashboard/setting'
+      preLoaderRoute: typeof LangAppDashboardSettingRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/tasks': {
+      id: '/$lang/_app/dashboard/tasks'
+      path: '/tasks'
+      fullPath: '/$lang/dashboard/tasks'
+      preLoaderRoute: typeof LangAppDashboardTasksRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/team': {
+      id: '/$lang/_app/dashboard/team'
+      path: '/team'
+      fullPath: '/$lang/dashboard/team'
+      preLoaderRoute: typeof LangAppDashboardTeamRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/transaction': {
+      id: '/$lang/_app/dashboard/transaction'
+      path: '/transaction'
+      fullPath: '/$lang/dashboard/transaction'
+      preLoaderRoute: typeof LangAppDashboardTransactionRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_public/clients/': {
+      id: '/$lang/_public/clients/'
+      path: '/clients'
+      fullPath: '/$lang/clients/'
+      preLoaderRoute: typeof LangPublicClientsIndexRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/clients/$id': {
+      id: '/$lang/_public/clients/$id'
+      path: '/clients/$id'
+      fullPath: '/$lang/clients/$id'
+      preLoaderRoute: typeof LangPublicClientsIdRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/fields/': {
+      id: '/$lang/_public/fields/'
+      path: '/fields'
+      fullPath: '/$lang/fields/'
+      preLoaderRoute: typeof LangPublicFieldsIndexRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/fields/$slug': {
+      id: '/$lang/_public/fields/$slug'
+      path: '/fields/$slug'
+      fullPath: '/$lang/fields/$slug'
+      preLoaderRoute: typeof LangPublicFieldsSlugRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/lawyers/': {
+      id: '/$lang/_public/lawyers/'
+      path: '/lawyers'
+      fullPath: '/$lang/lawyers/'
+      preLoaderRoute: typeof LangPublicLawyersIndexRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/lawyers/$id': {
+      id: '/$lang/_public/lawyers/$id'
+      path: '/lawyers/$id'
+      fullPath: '/$lang/lawyers/$id'
+      preLoaderRoute: typeof LangPublicLawyersIdRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/posts/': {
+      id: '/$lang/_public/posts/'
+      path: '/posts'
+      fullPath: '/$lang/posts/'
+      preLoaderRoute: typeof LangPublicPostsIndexRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/posts/$slug': {
+      id: '/$lang/_public/posts/$slug'
+      path: '/posts/$slug'
+      fullPath: '/$lang/posts/$slug'
+      preLoaderRoute: typeof LangPublicPostsSlugRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/service/': {
+      id: '/$lang/_public/service/'
+      path: '/service'
+      fullPath: '/$lang/service/'
+      preLoaderRoute: typeof LangPublicServiceIndexRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_public/service/$slug': {
+      id: '/$lang/_public/service/$slug'
+      path: '/service/$slug'
+      fullPath: '/$lang/service/$slug'
+      preLoaderRoute: typeof LangPublicServiceSlugRouteImport
+      parentRoute: typeof LangPublicRoute
+    }
+    '/$lang/_app/dashboard/cases/': {
+      id: '/$lang/_app/dashboard/cases/'
+      path: '/cases'
+      fullPath: '/$lang/dashboard/cases/'
+      preLoaderRoute: typeof LangAppDashboardCasesIndexRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
+    '/$lang/_app/dashboard/cases/$id': {
+      id: '/$lang/_app/dashboard/cases/$id'
+      path: '/cases/$id'
+      fullPath: '/$lang/dashboard/cases/$id'
+      preLoaderRoute: typeof LangAppDashboardCasesIdRouteImport
+      parentRoute: typeof LangAppDashboardRoute
+    }
   }
 }
 
+interface LangAppDashboardRouteChildren {
+  LangAppDashboardAnalyticsRoute: typeof LangAppDashboardAnalyticsRoute
+  LangAppDashboardCalendarRoute: typeof LangAppDashboardCalendarRoute
+  LangAppDashboardClientsRoute: typeof LangAppDashboardClientsRoute
+  LangAppDashboardDocumentsRoute: typeof LangAppDashboardDocumentsRoute
+  LangAppDashboardFieldsRoute: typeof LangAppDashboardFieldsRoute
+  LangAppDashboardMessagesRoute: typeof LangAppDashboardMessagesRoute
+  LangAppDashboardPostsRoute: typeof LangAppDashboardPostsRoute
+  LangAppDashboardServicesRoute: typeof LangAppDashboardServicesRoute
+  LangAppDashboardSettingRoute: typeof LangAppDashboardSettingRoute
+  LangAppDashboardTasksRoute: typeof LangAppDashboardTasksRoute
+  LangAppDashboardTeamRoute: typeof LangAppDashboardTeamRoute
+  LangAppDashboardTransactionRoute: typeof LangAppDashboardTransactionRoute
+  LangAppDashboardIndexRoute: typeof LangAppDashboardIndexRoute
+  LangAppDashboardCasesIdRoute: typeof LangAppDashboardCasesIdRoute
+  LangAppDashboardCasesIndexRoute: typeof LangAppDashboardCasesIndexRoute
+}
+
+const LangAppDashboardRouteChildren: LangAppDashboardRouteChildren = {
+  LangAppDashboardAnalyticsRoute: LangAppDashboardAnalyticsRoute,
+  LangAppDashboardCalendarRoute: LangAppDashboardCalendarRoute,
+  LangAppDashboardClientsRoute: LangAppDashboardClientsRoute,
+  LangAppDashboardDocumentsRoute: LangAppDashboardDocumentsRoute,
+  LangAppDashboardFieldsRoute: LangAppDashboardFieldsRoute,
+  LangAppDashboardMessagesRoute: LangAppDashboardMessagesRoute,
+  LangAppDashboardPostsRoute: LangAppDashboardPostsRoute,
+  LangAppDashboardServicesRoute: LangAppDashboardServicesRoute,
+  LangAppDashboardSettingRoute: LangAppDashboardSettingRoute,
+  LangAppDashboardTasksRoute: LangAppDashboardTasksRoute,
+  LangAppDashboardTeamRoute: LangAppDashboardTeamRoute,
+  LangAppDashboardTransactionRoute: LangAppDashboardTransactionRoute,
+  LangAppDashboardIndexRoute: LangAppDashboardIndexRoute,
+  LangAppDashboardCasesIdRoute: LangAppDashboardCasesIdRoute,
+  LangAppDashboardCasesIndexRoute: LangAppDashboardCasesIndexRoute,
+}
+
+const LangAppDashboardRouteWithChildren =
+  LangAppDashboardRoute._addFileChildren(LangAppDashboardRouteChildren)
+
 interface LangAppRouteChildren {
-  LangAppCasesRoute: typeof LangAppCasesRoute
-  LangAppDashboardRoute: typeof LangAppDashboardRoute
+  LangAppDashboardRoute: typeof LangAppDashboardRouteWithChildren
 }
 
 const LangAppRouteChildren: LangAppRouteChildren = {
-  LangAppCasesRoute: LangAppCasesRoute,
-  LangAppDashboardRoute: LangAppDashboardRoute,
+  LangAppDashboardRoute: LangAppDashboardRouteWithChildren,
 }
 
 const LangAppRouteWithChildren =
   LangAppRoute._addFileChildren(LangAppRouteChildren)
 
+interface LangPublicRouteChildren {
+  LangPublicAboutRoute: typeof LangPublicAboutRoute
+  LangPublicContactRoute: typeof LangPublicContactRoute
+  LangPublicHelpCenterRoute: typeof LangPublicHelpCenterRoute
+  LangPublicPrivacyRoute: typeof LangPublicPrivacyRoute
+  LangPublicTermsAndConditionsRoute: typeof LangPublicTermsAndConditionsRoute
+  LangPublicClientsIdRoute: typeof LangPublicClientsIdRoute
+  LangPublicFieldsSlugRoute: typeof LangPublicFieldsSlugRoute
+  LangPublicLawyersIdRoute: typeof LangPublicLawyersIdRoute
+  LangPublicPostsSlugRoute: typeof LangPublicPostsSlugRoute
+  LangPublicServiceSlugRoute: typeof LangPublicServiceSlugRoute
+  LangPublicClientsIndexRoute: typeof LangPublicClientsIndexRoute
+  LangPublicFieldsIndexRoute: typeof LangPublicFieldsIndexRoute
+  LangPublicLawyersIndexRoute: typeof LangPublicLawyersIndexRoute
+  LangPublicPostsIndexRoute: typeof LangPublicPostsIndexRoute
+  LangPublicServiceIndexRoute: typeof LangPublicServiceIndexRoute
+}
+
+const LangPublicRouteChildren: LangPublicRouteChildren = {
+  LangPublicAboutRoute: LangPublicAboutRoute,
+  LangPublicContactRoute: LangPublicContactRoute,
+  LangPublicHelpCenterRoute: LangPublicHelpCenterRoute,
+  LangPublicPrivacyRoute: LangPublicPrivacyRoute,
+  LangPublicTermsAndConditionsRoute: LangPublicTermsAndConditionsRoute,
+  LangPublicClientsIdRoute: LangPublicClientsIdRoute,
+  LangPublicFieldsSlugRoute: LangPublicFieldsSlugRoute,
+  LangPublicLawyersIdRoute: LangPublicLawyersIdRoute,
+  LangPublicPostsSlugRoute: LangPublicPostsSlugRoute,
+  LangPublicServiceSlugRoute: LangPublicServiceSlugRoute,
+  LangPublicClientsIndexRoute: LangPublicClientsIndexRoute,
+  LangPublicFieldsIndexRoute: LangPublicFieldsIndexRoute,
+  LangPublicLawyersIndexRoute: LangPublicLawyersIndexRoute,
+  LangPublicPostsIndexRoute: LangPublicPostsIndexRoute,
+  LangPublicServiceIndexRoute: LangPublicServiceIndexRoute,
+}
+
+const LangPublicRouteWithChildren = LangPublicRoute._addFileChildren(
+  LangPublicRouteChildren,
+)
+
 interface LangRouteChildren {
   LangAppRoute: typeof LangAppRouteWithChildren
+  LangPublicRoute: typeof LangPublicRouteWithChildren
   LangIndexRoute: typeof LangIndexRoute
 }
 
 const LangRouteChildren: LangRouteChildren = {
   LangAppRoute: LangAppRouteWithChildren,
+  LangPublicRoute: LangPublicRouteWithChildren,
   LangIndexRoute: LangIndexRoute,
 }
 
