@@ -1,0 +1,64 @@
+{
+  "app": { "name": "LexOffice", "tagline": "Платформа управления юридической практикой" },
+  "nav": {
+    "dashboard": "Панель",
+    "cases": "Дела",
+    "clients": "Клиенты",
+    "documents": "Документы",
+    "tasks": "Задачи",
+    "calendar": "Календарь",
+    "invoices": "Счета",
+    "messages": "Сообщения",
+    "team": "Команда",
+    "settings": "Настройки"
+  },
+  "actions": {
+    "search": "Поиск",
+    "create": "Создать",
+    "new_case": "Новое дело",
+    "sign_in": "Войти",
+    "sign_out": "Выйти",
+    "save": "Сохранить",
+    "cancel": "Отмена"
+  },
+  "theme": { "label": "Тема", "light": "Светлая", "dark": "Тёмная", "auto": "Система" },
+  "language": { "label": "Язык" },
+  "dashboard": {
+    "title": "Обзор",
+    "welcome": "С возвращением",
+    "cards": {
+      "active_cases": "Активные дела",
+      "open_tasks": "Открытые задачи",
+      "upcoming_hearings": "Ближайшие слушания",
+      "unpaid_invoices": "Неоплаченные счета"
+    },
+    "recent_cases": "Недавние дела",
+    "empty": "Пока нет данных."
+  },
+  "cases": {
+    "title": "Дела",
+    "subtitle": "Все дела вашей организации",
+    "columns": {
+      "reference": "Номер",
+      "title": "Название",
+      "client": "Клиент",
+      "status": "Статус",
+      "lawyer": "Ведущий юрист",
+      "updated": "Обновлено"
+    },
+    "empty": "Дел пока нет."
+  },
+  "roles": {
+    "administrator": "Администратор",
+    "manager": "Менеджер",
+    "organization_office_law": "Юридическая контора",
+    "lawyer": "Юрист",
+    "trainee": "Стажёр",
+    "employee": "Сотрудник",
+    "organization_client": "Клиент-организация",
+    "organization_client_team": "Команда клиента",
+    "client": "Клиент",
+    "reader": "Читатель",
+    "default": "Новый пользователь"
+  }
+}

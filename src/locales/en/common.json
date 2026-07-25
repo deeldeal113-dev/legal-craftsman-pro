@@ -1,0 +1,74 @@
+{
+  "app": {
+    "name": "LexOffice",
+    "tagline": "Legal Practice Management Platform"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "cases": "Cases",
+    "clients": "Clients",
+    "documents": "Documents",
+    "tasks": "Tasks",
+    "calendar": "Calendar",
+    "invoices": "Invoices",
+    "messages": "Messages",
+    "team": "Team",
+    "settings": "Settings"
+  },
+  "actions": {
+    "search": "Search",
+    "create": "Create",
+    "new_case": "New case",
+    "sign_in": "Sign in",
+    "sign_out": "Sign out",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "System"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "dashboard": {
+    "title": "Overview",
+    "welcome": "Welcome back",
+    "cards": {
+      "active_cases": "Active cases",
+      "open_tasks": "Open tasks",
+      "upcoming_hearings": "Upcoming hearings",
+      "unpaid_invoices": "Unpaid invoices"
+    },
+    "recent_cases": "Recent cases",
+    "empty": "No data yet — connect Directus to see live records."
+  },
+  "cases": {
+    "title": "Cases",
+    "subtitle": "All matters across your organization",
+    "columns": {
+      "reference": "Reference",
+      "title": "Title",
+      "client": "Client",
+      "status": "Status",
+      "lawyer": "Lead lawyer",
+      "updated": "Updated"
+    },
+    "empty": "No cases yet."
+  },
+  "roles": {
+    "administrator": "Administrator",
+    "manager": "Manager",
+    "organization_office_law": "Law Office",
+    "lawyer": "Lawyer",
+    "trainee": "Trainee",
+    "employee": "Employee",
+    "organization_client": "Client Organization",
+    "organization_client_team": "Client Team",
+    "client": "Client",
+    "reader": "Reader",
+    "default": "New user"
+  }
+}

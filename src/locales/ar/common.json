@@ -1,0 +1,74 @@
+{
+  "app": {
+    "name": "ليكس أوفيس",
+    "tagline": "منصة إدارة الممارسة القانونية"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "cases": "القضايا",
+    "clients": "العملاء",
+    "documents": "المستندات",
+    "tasks": "المهام",
+    "calendar": "التقويم",
+    "invoices": "الفواتير",
+    "messages": "الرسائل",
+    "team": "الفريق",
+    "settings": "الإعدادات"
+  },
+  "actions": {
+    "search": "بحث",
+    "create": "إنشاء",
+    "new_case": "قضية جديدة",
+    "sign_in": "تسجيل الدخول",
+    "sign_out": "تسجيل الخروج",
+    "save": "حفظ",
+    "cancel": "إلغاء"
+  },
+  "theme": {
+    "label": "السمة",
+    "light": "فاتح",
+    "dark": "داكن",
+    "auto": "النظام"
+  },
+  "language": {
+    "label": "اللغة"
+  },
+  "dashboard": {
+    "title": "نظرة عامة",
+    "welcome": "مرحبًا بعودتك",
+    "cards": {
+      "active_cases": "القضايا النشطة",
+      "open_tasks": "المهام المفتوحة",
+      "upcoming_hearings": "الجلسات القادمة",
+      "unpaid_invoices": "الفواتير غير المدفوعة"
+    },
+    "recent_cases": "أحدث القضايا",
+    "empty": "لا توجد بيانات بعد — قم بتوصيل Directus لعرض السجلات."
+  },
+  "cases": {
+    "title": "القضايا",
+    "subtitle": "جميع القضايا في مؤسستك",
+    "columns": {
+      "reference": "المرجع",
+      "title": "العنوان",
+      "client": "العميل",
+      "status": "الحالة",
+      "lawyer": "المحامي المسؤول",
+      "updated": "آخر تحديث"
+    },
+    "empty": "لا توجد قضايا بعد."
+  },
+  "roles": {
+    "administrator": "مدير النظام",
+    "manager": "مدير",
+    "organization_office_law": "مكتب محاماة",
+    "lawyer": "محامٍ",
+    "trainee": "متدرب",
+    "employee": "موظف",
+    "organization_client": "منظمة عميل",
+    "organization_client_team": "فريق العميل",
+    "client": "عميل",
+    "reader": "قارئ",
+    "default": "مستخدم جديد"
+  }
+}

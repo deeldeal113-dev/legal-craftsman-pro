@@ -1,0 +1,64 @@
+{
+  "app": { "name": "LexOffice", "tagline": "Piattaforma di gestione legale" },
+  "nav": {
+    "dashboard": "Pannello",
+    "cases": "Pratiche",
+    "clients": "Clienti",
+    "documents": "Documenti",
+    "tasks": "Attività",
+    "calendar": "Calendario",
+    "invoices": "Fatture",
+    "messages": "Messaggi",
+    "team": "Team",
+    "settings": "Impostazioni"
+  },
+  "actions": {
+    "search": "Cerca",
+    "create": "Crea",
+    "new_case": "Nuova pratica",
+    "sign_in": "Accedi",
+    "sign_out": "Esci",
+    "save": "Salva",
+    "cancel": "Annulla"
+  },
+  "theme": { "label": "Tema", "light": "Chiaro", "dark": "Scuro", "auto": "Sistema" },
+  "language": { "label": "Lingua" },
+  "dashboard": {
+    "title": "Panoramica",
+    "welcome": "Bentornato",
+    "cards": {
+      "active_cases": "Pratiche attive",
+      "open_tasks": "Attività aperte",
+      "upcoming_hearings": "Udienze imminenti",
+      "unpaid_invoices": "Fatture non pagate"
+    },
+    "recent_cases": "Pratiche recenti",
+    "empty": "Nessun dato."
+  },
+  "cases": {
+    "title": "Pratiche",
+    "subtitle": "Tutte le pratiche della tua organizzazione",
+    "columns": {
+      "reference": "Riferimento",
+      "title": "Titolo",
+      "client": "Cliente",
+      "status": "Stato",
+      "lawyer": "Avvocato principale",
+      "updated": "Aggiornato"
+    },
+    "empty": "Nessuna pratica."
+  },
+  "roles": {
+    "administrator": "Amministratore",
+    "manager": "Responsabile",
+    "organization_office_law": "Studio legale",
+    "lawyer": "Avvocato",
+    "trainee": "Tirocinante",
+    "employee": "Dipendente",
+    "organization_client": "Organizzazione cliente",
+    "organization_client_team": "Team cliente",
+    "client": "Cliente",
+    "reader": "Lettore",
+    "default": "Nuovo utente"
+  }
+}

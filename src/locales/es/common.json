@@ -1,0 +1,64 @@
+{
+  "app": { "name": "LexOffice", "tagline": "Plataforma de gestión jurídica" },
+  "nav": {
+    "dashboard": "Panel",
+    "cases": "Casos",
+    "clients": "Clientes",
+    "documents": "Documentos",
+    "tasks": "Tareas",
+    "calendar": "Calendario",
+    "invoices": "Facturas",
+    "messages": "Mensajes",
+    "team": "Equipo",
+    "settings": "Ajustes"
+  },
+  "actions": {
+    "search": "Buscar",
+    "create": "Crear",
+    "new_case": "Nuevo caso",
+    "sign_in": "Iniciar sesión",
+    "sign_out": "Cerrar sesión",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "theme": { "label": "Tema", "light": "Claro", "dark": "Oscuro", "auto": "Sistema" },
+  "language": { "label": "Idioma" },
+  "dashboard": {
+    "title": "Resumen",
+    "welcome": "Bienvenido de nuevo",
+    "cards": {
+      "active_cases": "Casos activos",
+      "open_tasks": "Tareas abiertas",
+      "upcoming_hearings": "Próximas audiencias",
+      "unpaid_invoices": "Facturas impagadas"
+    },
+    "recent_cases": "Casos recientes",
+    "empty": "Aún no hay datos."
+  },
+  "cases": {
+    "title": "Casos",
+    "subtitle": "Todos los casos de su organización",
+    "columns": {
+      "reference": "Referencia",
+      "title": "Título",
+      "client": "Cliente",
+      "status": "Estado",
+      "lawyer": "Abogado principal",
+      "updated": "Actualizado"
+    },
+    "empty": "No hay casos."
+  },
+  "roles": {
+    "administrator": "Administrador",
+    "manager": "Gerente",
+    "organization_office_law": "Bufete",
+    "lawyer": "Abogado",
+    "trainee": "Aprendiz",
+    "employee": "Empleado",
+    "organization_client": "Organización cliente",
+    "organization_client_team": "Equipo del cliente",
+    "client": "Cliente",
+    "reader": "Lector",
+    "default": "Nuevo usuario"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "app": { "name": "LexOffice", "tagline": "Plateforme de gestion juridique" },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "cases": "Dossiers",
+    "clients": "Clients",
+    "documents": "Documents",
+    "tasks": "Tâches",
+    "calendar": "Calendrier",
+    "invoices": "Factures",
+    "messages": "Messages",
+    "team": "Équipe",
+    "settings": "Paramètres"
+  },
+  "actions": {
+    "search": "Rechercher",
+    "create": "Créer",
+    "new_case": "Nouveau dossier",
+    "sign_in": "Connexion",
+    "sign_out": "Déconnexion",
+    "save": "Enregistrer",
+    "cancel": "Annuler"
+  },
+  "theme": { "label": "Thème", "light": "Clair", "dark": "Sombre", "auto": "Système" },
+  "language": { "label": "Langue" },
+  "dashboard": {
+    "title": "Aperçu",
+    "welcome": "Bon retour",
+    "cards": {
+      "active_cases": "Dossiers actifs",
+      "open_tasks": "Tâches ouvertes",
+      "upcoming_hearings": "Audiences à venir",
+      "unpaid_invoices": "Factures impayées"
+    },
+    "recent_cases": "Dossiers récents",
+    "empty": "Aucune donnée — connectez Directus pour voir les enregistrements."
+  },
+  "cases": {
+    "title": "Dossiers",
+    "subtitle": "Toutes les affaires de votre organisation",
+    "columns": {
+      "reference": "Référence",
+      "title": "Titre",
+      "client": "Client",
+      "status": "Statut",
+      "lawyer": "Avocat principal",
+      "updated": "Mis à jour"
+    },
+    "empty": "Aucun dossier."
+  },
+  "roles": {
+    "administrator": "Administrateur",
+    "manager": "Gestionnaire",
+    "organization_office_law": "Cabinet",
+    "lawyer": "Avocat",
+    "trainee": "Stagiaire",
+    "employee": "Employé",
+    "organization_client": "Organisation cliente",
+    "organization_client_team": "Équipe cliente",
+    "client": "Client",
+    "reader": "Lecteur",
+    "default": "Nouvel utilisateur"
+  }
+}

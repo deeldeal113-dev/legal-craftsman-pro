@@ -9,258 +9,87 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as FieldsRouteImport } from './routes/fields'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as DashboardRouteImport } from './routes/dashboard'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BlogRouteImport } from './routes/blog'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
-import { Route as BlogTagTagRouteImport } from './routes/blog.tag.$tag'
-import { Route as BlogCategoryCategoryRouteImport } from './routes/blog.category.$category'
+import { Route as LangRouteImport } from './routes/$lang'
+import { Route as LangIndexRouteImport } from './routes/$lang.index'
+import { Route as LangAppRouteImport } from './routes/$lang._app'
+import { Route as LangAppCasesRouteImport } from './routes/$lang._app.cases'
+import { Route as LangAppDashboardRouteImport } from './routes/$lang._app.dashboard'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: '/robots.txt',
-  path: '/robots.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FieldsRoute = FieldsRouteImport.update({
-  id: '/fields',
-  path: '/fields',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogRoute,
+const LangRoute = LangRouteImport.update({
+  id: '/$lang',
+  path: '/$lang',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const BlogTagTagRoute = BlogTagTagRouteImport.update({
-  id: '/tag/$tag',
-  path: '/tag/$tag',
-  getParentRoute: () => BlogRoute,
+const LangIndexRoute = LangIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LangRoute,
 } as any)
-const BlogCategoryCategoryRoute = BlogCategoryCategoryRouteImport.update({
-  id: '/category/$category',
-  path: '/category/$category',
-  getParentRoute: () => BlogRoute,
+const LangAppRoute = LangAppRouteImport.update({
+  id: '/_app',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangAppCasesRoute = LangAppCasesRouteImport.update({
+  id: '/cases',
+  path: '/cases',
+  getParentRoute: () => LangAppRoute,
+} as any)
+const LangAppDashboardRoute = LangAppDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => LangAppRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/dashboard': typeof DashboardRoute
-  '/faq': typeof FaqRoute
-  '/fields': typeof FieldsRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/services': typeof ServicesRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/blog/$slug': typeof BlogSlugRoute
-  '/blog/category/$category': typeof BlogCategoryCategoryRoute
-  '/blog/tag/$tag': typeof BlogTagTagRoute
+  '/$lang': typeof LangRouteWithChildren
+  '/$lang/': typeof LangIndexRoute
+  '/$lang/cases': typeof LangAppCasesRoute
+  '/$lang/dashboard': typeof LangAppDashboardRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/dashboard': typeof DashboardRoute
-  '/faq': typeof FaqRoute
-  '/fields': typeof FieldsRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/services': typeof ServicesRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/blog/$slug': typeof BlogSlugRoute
-  '/blog/category/$category': typeof BlogCategoryCategoryRoute
-  '/blog/tag/$tag': typeof BlogTagTagRoute
+  '/$lang': typeof LangIndexRoute
+  '/$lang/cases': typeof LangAppCasesRoute
+  '/$lang/dashboard': typeof LangAppDashboardRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/dashboard': typeof DashboardRoute
-  '/faq': typeof FaqRoute
-  '/fields': typeof FieldsRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/services': typeof ServicesRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/blog/$slug': typeof BlogSlugRoute
-  '/blog/category/$category': typeof BlogCategoryCategoryRoute
-  '/blog/tag/$tag': typeof BlogTagTagRoute
+  '/$lang': typeof LangRouteWithChildren
+  '/$lang/_app': typeof LangAppRouteWithChildren
+  '/$lang/': typeof LangIndexRoute
+  '/$lang/_app/cases': typeof LangAppCasesRoute
+  '/$lang/_app/dashboard': typeof LangAppDashboardRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/blog'
-    | '/contact'
-    | '/dashboard'
-    | '/faq'
-    | '/fields'
-    | '/robots.txt'
-    | '/services'
-    | '/sitemap.xml'
-    | '/blog/$slug'
-    | '/blog/category/$category'
-    | '/blog/tag/$tag'
+  fullPaths: '/' | '/$lang' | '/$lang/' | '/$lang/cases' | '/$lang/dashboard'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/blog'
-    | '/contact'
-    | '/dashboard'
-    | '/faq'
-    | '/fields'
-    | '/robots.txt'
-    | '/services'
-    | '/sitemap.xml'
-    | '/blog/$slug'
-    | '/blog/category/$category'
-    | '/blog/tag/$tag'
+  to: '/' | '/$lang' | '/$lang/cases' | '/$lang/dashboard'
   id:
     | '__root__'
     | '/'
-    | '/about'
-    | '/blog'
-    | '/contact'
-    | '/dashboard'
-    | '/faq'
-    | '/fields'
-    | '/robots.txt'
-    | '/services'
-    | '/sitemap.xml'
-    | '/blog/$slug'
-    | '/blog/category/$category'
-    | '/blog/tag/$tag'
+    | '/$lang'
+    | '/$lang/_app'
+    | '/$lang/'
+    | '/$lang/_app/cases'
+    | '/$lang/_app/dashboard'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  BlogRoute: typeof BlogRouteWithChildren
-  ContactRoute: typeof ContactRoute
-  DashboardRoute: typeof DashboardRoute
-  FaqRoute: typeof FaqRoute
-  FieldsRoute: typeof FieldsRoute
-  RobotsDottxtRoute: typeof RobotsDottxtRoute
-  ServicesRoute: typeof ServicesRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  LangRoute: typeof LangRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/robots.txt': {
-      id: '/robots.txt'
-      path: '/robots.txt'
-      fullPath: '/robots.txt'
-      preLoaderRoute: typeof RobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fields': {
-      id: '/fields'
-      path: '/fields'
-      fullPath: '/fields'
-      preLoaderRoute: typeof FieldsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -268,55 +97,72 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
+    '/$lang': {
+      id: '/$lang'
+      path: '/$lang'
+      fullPath: '/$lang'
+      preLoaderRoute: typeof LangRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/blog/tag/$tag': {
-      id: '/blog/tag/$tag'
-      path: '/tag/$tag'
-      fullPath: '/blog/tag/$tag'
-      preLoaderRoute: typeof BlogTagTagRouteImport
-      parentRoute: typeof BlogRoute
+    '/$lang/': {
+      id: '/$lang/'
+      path: '/'
+      fullPath: '/$lang/'
+      preLoaderRoute: typeof LangIndexRouteImport
+      parentRoute: typeof LangRoute
     }
-    '/blog/category/$category': {
-      id: '/blog/category/$category'
-      path: '/category/$category'
-      fullPath: '/blog/category/$category'
-      preLoaderRoute: typeof BlogCategoryCategoryRouteImport
-      parentRoute: typeof BlogRoute
+    '/$lang/_app': {
+      id: '/$lang/_app'
+      path: ''
+      fullPath: '/$lang'
+      preLoaderRoute: typeof LangAppRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/_app/cases': {
+      id: '/$lang/_app/cases'
+      path: '/cases'
+      fullPath: '/$lang/cases'
+      preLoaderRoute: typeof LangAppCasesRouteImport
+      parentRoute: typeof LangAppRoute
+    }
+    '/$lang/_app/dashboard': {
+      id: '/$lang/_app/dashboard'
+      path: '/dashboard'
+      fullPath: '/$lang/dashboard'
+      preLoaderRoute: typeof LangAppDashboardRouteImport
+      parentRoute: typeof LangAppRoute
     }
   }
 }
 
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-  BlogCategoryCategoryRoute: typeof BlogCategoryCategoryRoute
-  BlogTagTagRoute: typeof BlogTagTagRoute
+interface LangAppRouteChildren {
+  LangAppCasesRoute: typeof LangAppCasesRoute
+  LangAppDashboardRoute: typeof LangAppDashboardRoute
 }
 
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-  BlogCategoryCategoryRoute: BlogCategoryCategoryRoute,
-  BlogTagTagRoute: BlogTagTagRoute,
+const LangAppRouteChildren: LangAppRouteChildren = {
+  LangAppCasesRoute: LangAppCasesRoute,
+  LangAppDashboardRoute: LangAppDashboardRoute,
 }
 
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+const LangAppRouteWithChildren =
+  LangAppRoute._addFileChildren(LangAppRouteChildren)
+
+interface LangRouteChildren {
+  LangAppRoute: typeof LangAppRouteWithChildren
+  LangIndexRoute: typeof LangIndexRoute
+}
+
+const LangRouteChildren: LangRouteChildren = {
+  LangAppRoute: LangAppRouteWithChildren,
+  LangIndexRoute: LangIndexRoute,
+}
+
+const LangRouteWithChildren = LangRoute._addFileChildren(LangRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  BlogRoute: BlogRouteWithChildren,
-  ContactRoute: ContactRoute,
-  DashboardRoute: DashboardRoute,
-  FaqRoute: FaqRoute,
-  FieldsRoute: FieldsRoute,
-  RobotsDottxtRoute: RobotsDottxtRoute,
-  ServicesRoute: ServicesRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  LangRoute: LangRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,0 +1,64 @@
+{
+  "app": { "name": "LexOffice", "tagline": "कानूनी प्रबंधन प्लेटफ़ॉर्म" },
+  "nav": {
+    "dashboard": "डैशबोर्ड",
+    "cases": "मामले",
+    "clients": "ग्राहक",
+    "documents": "दस्तावेज़",
+    "tasks": "कार्य",
+    "calendar": "कैलेंडर",
+    "invoices": "चालान",
+    "messages": "संदेश",
+    "team": "टीम",
+    "settings": "सेटिंग्स"
+  },
+  "actions": {
+    "search": "खोजें",
+    "create": "बनाएँ",
+    "new_case": "नया मामला",
+    "sign_in": "साइन इन",
+    "sign_out": "साइन आउट",
+    "save": "सहेजें",
+    "cancel": "रद्द करें"
+  },
+  "theme": { "label": "थीम", "light": "हल्का", "dark": "गहरा", "auto": "सिस्टम" },
+  "language": { "label": "भाषा" },
+  "dashboard": {
+    "title": "अवलोकन",
+    "welcome": "पुनः स्वागत है",
+    "cards": {
+      "active_cases": "सक्रिय मामले",
+      "open_tasks": "खुले कार्य",
+      "upcoming_hearings": "आगामी सुनवाई",
+      "unpaid_invoices": "अवैतनिक चालान"
+    },
+    "recent_cases": "हाल के मामले",
+    "empty": "अभी कोई डेटा नहीं।"
+  },
+  "cases": {
+    "title": "मामले",
+    "subtitle": "आपके संगठन के सभी मामले",
+    "columns": {
+      "reference": "संदर्भ",
+      "title": "शीर्षक",
+      "client": "ग्राहक",
+      "status": "स्थिति",
+      "lawyer": "मुख्य वकील",
+      "updated": "अद्यतन"
+    },
+    "empty": "कोई मामला नहीं।"
+  },
+  "roles": {
+    "administrator": "प्रशासक",
+    "manager": "प्रबंधक",
+    "organization_office_law": "कानूनी कार्यालय",
+    "lawyer": "वकील",
+    "trainee": "प्रशिक्षु",
+    "employee": "कर्मचारी",
+    "organization_client": "ग्राहक संगठन",
+    "organization_client_team": "ग्राहक टीम",
+    "client": "ग्राहक",
+    "reader": "पाठक",
+    "default": "नया उपयोगकर्ता"
+  }
+}
